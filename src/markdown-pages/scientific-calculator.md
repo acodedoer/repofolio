@@ -1,10 +1,21 @@
 ---
 slug: "/projects/scientific-calculator"
-date: "2017-11-07"
 title: "Scientific Calculator"
-examples: ['']
-repositories: ['']
-videos: []
-resources: []
-frameworks: ['Vanilla JS']
+tags: ['Productivity']
+types: "FrontEnd"
+levels: "Basic"
+sublevels: 2
 ---
+
+# Scientific Calculator
+Build a scientific calculator that performs simple arithmetic as well complex mathematical operations.
+
+## Vanilla JS
+
+## React
+
+## Vue
+
+## React Native
+
+## Flutter

@@ -1,21 +1,32 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
     const { createPage } = actions
-  
-    const blogPostTemplate = require.resolve(`./src/templates/project-template.js`)
-  
+
+    const projectTemplate = require.resolve(`./src/templates/project-template.js`)
+    const listTemplate = require.resolve(`./src/templates/list-template.js`)
+
     const result = await graphql(`
       {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
+        projects: allMarkdownRemark(
+          sort: { order: DESC, fields: [frontmatter___title] }
           limit: 1000
         ) {
           edges {
             node {
               frontmatter {
+                title
                 slug
+                types
+                tags
+                levels
+                sublevels
               }
             }
           }
+        }
+        filters: allMarkdownRemark {
+          types: distinct(field: frontmatter___types)
+          tags: distinct(field: frontmatter___tags)
+          levels: distinct(field: frontmatter___levels)
         }
       }
     `)
@@ -23,17 +34,31 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     // Handle errors
     if (result.errors) {
       reporter.panicOnBuild(`Error while running GraphQL query.`)
+      console.log(result)
       return
     }
-  
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+
+    result.data.projects.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.slug,
-        component: blogPostTemplate,
+        component: projectTemplate,
         context: {
-          // additional data can be passed via context
           slug: node.frontmatter.slug,
         },
       })
     })
+
+    for (const parent in result.data.filters) {
+        result.data.filters[parent].forEach((element,key) => {
+          createPage({
+            path: `/${element.toLowerCase()}/`,
+            component: listTemplate,
+            context: {
+              element: element,
+              check: result.data.projects.edges[key].node.frontmatter,
+              projects: result.data.projects.edges.filter(({node}) => !Array.isArray(node.frontmatter[parent])? node.frontmatter[parent] == element : node.frontmatter[parent].includes(element))
+            },
+          })
+        })
+    } 
   }

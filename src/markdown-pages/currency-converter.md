@@ -1,10 +1,29 @@
 ---
 slug: "/projects/currency-converter"
-date: "2017-11-07"
 title: "Currency Converter"
-examples: ['https://acodedoer.github.io/currency-converter']
-repositories: ['https://github.com/acodedoer/currency-converter']
-videos: []
-resources: [['free API','https://free.currencyconverterapi.com/']]
-frameworks: ['Vanilla JS', 'React', 'Vue']
+tags: ['Productivity']
+types: "API-Consuming"
+levels: "Intermediary"
+sublevels: 1
 ---
+
+Build a an app that converts amounts from one currency to its equivalent in another currency
+
+## Vanilla JS
+### Videos 
+### Examples
+- Example 1 - [A simple cureency converter](https://acodedoer.github.io/currency-converter)
+
+### Repositories
+- [Repository](https://github.com/acodedoer/currency-converter) for Example 1
+
+### Resources
+- [Free API](https://free.currencyconverterapi.com/) for getting exchange rates
+
+## React
+
+## Vue
+
+## React Native
+
+## Flutter
