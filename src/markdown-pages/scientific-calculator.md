@@ -9,13 +9,3 @@ sublevels: 2
 
 # Scientific Calculator
 Build a scientific calculator that performs simple arithmetic as well complex mathematical operations.
-
-## Vanilla JS
-
-## React
-
-## Vue
-
-## React Native
-
-## Flutter

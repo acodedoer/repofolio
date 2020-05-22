@@ -54,8 +54,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             path: `/${element.toLowerCase()}/`,
             component: listTemplate,
             context: {
+              filters: result.data.filters,
               element: element,
-              check: result.data.projects.edges[key].node.frontmatter,
               projects: result.data.projects.edges.filter(({node}) => !Array.isArray(node.frontmatter[parent])? node.frontmatter[parent] == element : node.frontmatter[parent].includes(element))
             },
           })

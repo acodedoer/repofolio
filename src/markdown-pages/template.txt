@@ -2,7 +2,7 @@
 slug: "/projects/"
 title: ""
 tags: []
-type: ""
-level: ""
-sublevel: 
+types: ""
+levels: ""
+sublevels: 
 ---

@@ -2,9 +2,9 @@
 slug: "/projects/cake-recipe"
 title: "Cake Recipe"
 tags: ["Static-Page"]
-type: "FrontEnd"
-level: "Newbie"
-sublevel: "1" 
+types: "FrontEnd"
+levels: "Newbie"
+sublevels: 1
 ---
 # Cake Recipe
 Cakes come in different shapes and sizes, but being delicious is something they all have in common. In this project you'll be practising basic HTML skills by creating a page for a cake recipe (you get to choose the cake). You can share an old familiy recipe or a brand new one you just created. What is important is that you use HTML to create web page that displays presents the recipe for readers.
