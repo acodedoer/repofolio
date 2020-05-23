@@ -1,6 +1,6 @@
 import React from "react"
 import PostLink from '../components/post-link'
-
+import SEO from "../components/seo"
 import Layout from "../components/layout"
 import "../components/layout.css";
 
@@ -10,12 +10,12 @@ const IndexPage = ({data}) => {
     .map((edge, key) => <PostLink key={key} post={edge.node} />)
   return(
     <Layout tags={data.filters.tags} levels={data.filters.levels} types={data.filters.types}>
+        <SEO title="Home" />
       <div id="posts">{Posts}</div>
     </Layout>)
 }
 
 export default IndexPage
-
 export const pageQuery = graphql`
   query {
     filters: allMarkdownRemark {
