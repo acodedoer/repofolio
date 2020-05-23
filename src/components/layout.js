@@ -58,17 +58,20 @@ const useStyles = makeStyles((theme) => ({
 
 function Layout(props) {
   
-  const {tags, levels, types, children} = props
+  const {children} = props
 
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
+    query {
+      allMarkdownRemark {
+        types: distinct(field: frontmatter___types)
+        tags: distinct(field: frontmatter___tags)
+        levels: distinct(field: frontmatter___levels)
       }
     }
   `)
+
+  const {tags, levels, types} = data.allMarkdownRemark;
+  
 
   const { window } = props;
   const classes = useStyles();
@@ -135,7 +138,7 @@ function Layout(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h4" noWrap>
-            <a style={{textDecoration:"none", color:'white'}} href="/">{data.site.siteMetadata.title}</a>
+            <a style={{textDecoration:"none", color:'white'}} href="/">repofolio</a>
           </Typography>
         </Toolbar>
       </AppBar>
