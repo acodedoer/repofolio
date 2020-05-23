@@ -5,9 +5,9 @@ import StarFull from '@material-ui/icons/Star';
 import StarHalf from '@material-ui/icons/StarHalf';
 import StarEmpty from '@material-ui/icons/StarBorder';
 import Games from '@material-ui/icons/Games';
-import SPA from '@material-ui/icons/apps';
+import SPA from '@material-ui/icons/Apps';
 import API from '@material-ui/icons/CloudDownload';
-import FullSite from '@material-ui/icons/folder';
+import FullSite from '@material-ui/icons/Folder';
 import {faUser, faUserTie, faPlug, faUserSecret, faCubes, faDesktop, faUserNinja, faUserAstronaut, faTools, faFile, faTerminal, faServer} from '@fortawesome/free-solid-svg-icons'
 
 export const icons = {
