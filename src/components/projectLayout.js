@@ -48,6 +48,14 @@ const useStyles = makeStyles((theme) => ({
   inputRoot: {
     color: 'inherit',
   },
+  content: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexGrow: 1,
+    padding: theme.spacing(3),
+  },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
@@ -61,14 +69,17 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
+bar: {
+    backgroundColor: "#464655"
+}
 }));
 
-export default function Header({siteTitle}) {
+export default function ProjectLayput({siteTitle, children}) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar className={classes.bar} position="static">
         <Toolbar>
           <IconButton
             edge="start"
@@ -78,8 +89,8 @@ export default function Header({siteTitle}) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            {siteTitle}
+          <Typography className={classes.title} variant="h4" noWrap>
+            <a style={{textDecoration:"none", color:'white'}} href="/">repofolio</a>
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -96,7 +107,9 @@ export default function Header({siteTitle}) {
           </div>
         </Toolbar>
       </AppBar>
+      <main className={classes.content}>
+        {children}
+      </main>
     </div>
   );
 }
-

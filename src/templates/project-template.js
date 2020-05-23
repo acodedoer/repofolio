@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import ProjectLayout from "../components/projectLayout"
+import '../components/layout.css'
+import Summary from "../components/summary"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -8,12 +10,14 @@ export default function Template({
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   return (
-      <Layout>
-            <h1>{frontmatter.title}</h1>
-            <div className="projectContainer"
-                dangerouslySetInnerHTML={{ __html: html }}
-              />
-      </Layout>
+      <ProjectLayout>
+        <Summary frontmatter={frontmatter} align={'center'}/>
+          <div id="projectDetails">
+              <div
+                  dangerouslySetInnerHTML={{ __html: html }}
+                />
+          </div>
+      </ProjectLayout>
   )
 }
 
@@ -22,8 +26,10 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        slug
-        title
+        types
+        levels
+        tags
+        sublevels
       }
     }
   }

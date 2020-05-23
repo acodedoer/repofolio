@@ -4,7 +4,8 @@ title: "Scientific Calculator"
 tags: ['Productivity']
 types: "FrontEnd"
 levels: "Basic"
-sublevels: 2
+sublevels: "Level-2"
+description: "Build a calculator that performs basic as well as advance operations (e.g trignometric and logarithmic functions)."
 ---
 
 # Scientific Calculator

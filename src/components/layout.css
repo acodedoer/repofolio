@@ -14,28 +14,63 @@ body{
 
 h3{
   margin-top: 0rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
 }
+
 #sideBar{
-  background-color: #464655;
-  position: static;
+  background-color: #ECECEE;
+  position: fixed;
   width: 15rem;
   min-height:100vh;
   box-sizing: border-box;
   padding-top: 4em;
+  box-shadow: 0.1px 0px 2px 0.01px #b4b4b4;
 }
 
 #posts{
   box-sizing: border-box;
   padding-top: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
 }
 
 #post{
   padding: 1em;
   margin: 1rem;
-  width:40vw;
-  border: 1px solid #464655;
-  color: black
+  width:50vw;
+  box-shadow: 0.1px 0.1px 2px 0.01px #b4b4b4;
+  color: black;
+  border-radius: 5px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#projectDetails{
+  width: 80%
+}
+
+#postInner{
+  display: flex;
+  flex-direction: row;
+}
+
+#postInner1{
+  width: 50%;
+  padding-right: 1em;
+}
+
+#postInner2{
+  width: 50%;
+  padding-left: 1em;
+  border-left: 0.1px solid #b4b4b4;
+  padding-top: 1rem;
+}
+
+#postInner1 p{
+  margin:0;
+  padding-top: 1rem;
 }
 
 #post a{
@@ -52,14 +87,49 @@ h3{
   padding-left: 2rem;
   padding-bottom: 1rem;
   padding-top: 1rem;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .sideLink a{
   text-decoration: none;
-  color: white;
+  color: black;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .sideGroup{
-  
-  border-bottom: 1px solid #2B2C28;
+  margin-bottom: 2rem;
+}
+
+p, li, ul{
+  font-family: 'Open Sans', sans-serif;
+}
+
+@media only screen and (max-width: 1200px) {
+  #posts {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  #post{
+    width: 100%
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  #postInner {
+    flex-direction: column;
+  }
+
+  #postInner2, #postInner1{
+    border: none;
+    padding-right: 0;
+    padding-left: 0;
+    width:100%
+  }
+
+  #projectDetails{
+    width:100%
+  }
 }

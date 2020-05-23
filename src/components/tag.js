@@ -8,10 +8,10 @@ const colors = {'levels':'#808080', 'newbie':'#899878', 'basic': '#CE796B', 'int
 'backend':'#30321C',
 'frontend':'#6B0504'}
 
-const Tag = ({clr,item}) =>{
+const Tag = ({clr, label, item}) =>{
     {console.log(item)}
     return(
-        <Btn clr={colors[clr]} name={item}/>
+        <Btn clr={colors[clr]} label= {label} name={item}/>
     )
 }
 

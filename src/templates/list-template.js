@@ -13,8 +13,7 @@ export default function Template(
     console.log(data)
 
   return (
-      <Layout>
-        <Filter tags={filters.tags} levels={filters.levels} types={filters.types}/>
+      <Layout tags={filters.tags} levels={filters.levels} types={filters.types}>
         <div id="posts">
             {projects.map(({node}, key) =>
                 <PostLink key={key} post={node} />

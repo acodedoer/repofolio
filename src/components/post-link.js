@@ -1,19 +1,65 @@
-import React from "react"
 import { Link } from "gatsby"
-import Tag from '../components/tag'
-const PostLink = ({ post }) => (
-  <div id="post">
-    <h3>
-      <Link to={post.frontmatter.slug}>
-        {post.frontmatter.title}
-      </Link>
-    </h3>
-    <div>
-      <Tag clr= {post.frontmatter.levels.toLowerCase()} item={post.frontmatter.levels}/>
-      <Tag clr= {'levels'} item={`Level: ${post.frontmatter.sublevels}`}/>
-      {post.frontmatter.tags.map((item,key)=><Tag key={key} clr= {item.toLowerCase()} item={item}/>)}
-      <Tag clr= {post.frontmatter.types.toLowerCase()} item={post.frontmatter.types}/>
-    </div>
-  </div>
-)
-export default PostLink
+import React from 'react';
+import InfoIcon from '@material-ui/icons/Info';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import Summary from './summary'
+
+const useStyles = makeStyles({
+  root: {
+    width: "60%",
+    marginBottom: "1em"
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+  act: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  }
+});
+
+export default function PostLink({post}) {
+  const classes = useStyles();
+
+  return (
+    <Card id="post" className={classes.root}>
+      <CardContent>
+        <Typography variant="h5" component="h2">
+          {post.frontmatter.title}
+        </Typography>
+        <div id="postInner">
+          <div id="postInner1">
+          <Typography className={classes.pos} color="textSecondary">
+            {post.frontmatter.description}
+          </Typography>
+          </div>
+          <div id="postInner2">
+          <Summary frontmatter={post.frontmatter} align={'left'}/>
+          </div>
+        </div>
+      </CardContent>
+      <CardActions className={classes.act}>
+        <Button size="small" variant="contained">
+          <Link style={{textDecoration:"none", color:'black'}} to={post.frontmatter.slug}>
+           View Details
+          </Link>
+        </Button>
+        <Button variant="contained" color="primary" size="small">Clone Template</Button>
+      </CardActions>
+    </Card>
+  );
+}
