@@ -11,7 +11,7 @@ import Summary from './summary'
 
 const useStyles = makeStyles({
   root: {
-    width: "60%",
+    width: "80%",
     marginBottom: "1em"
   },
   bullet: {
@@ -53,12 +53,12 @@ export default function PostLink({post}) {
         </div>
       </CardContent>
       <CardActions className={classes.act}>
-        <Button size="small" variant="contained">
-          <Link style={{textDecoration:"none", color:'black'}} to={post.frontmatter.slug}>
+        <Button size="small"style={{backgroundColor: "rgb(55, 59, 95)"}} variant="contained">
+          <Link style={{textDecoration:"none", color:'white'}} to={post.frontmatter.slug}>
            View Details
           </Link>
         </Button>
-        <Button variant="contained" color="primary" size="small">Clone Template</Button>
+        <Button variant="contained" color="secondary" size="small">Clone Template</Button>
       </CardActions>
     </Card>
   );

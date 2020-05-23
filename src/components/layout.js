@@ -1,18 +1,15 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React from 'react';
-import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -25,6 +22,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    backgroundColor: '#efeff6',
   },
   drawer: {
     [theme.breakpoints.up('sm')]: {
@@ -33,16 +31,18 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   appBar: {
-    [theme.breakpoints.up('sm')]: {
-      width: `calc(100% - ${drawerWidth}px)`,
+      paddingLeft: '1rem',
+      width: `100vw`,
+      zIndex: '999999999',
       marginLeft: drawerWidth,
-      backgroundColor: "#464655"
-    },
+      backgroundColor: "rgb(55, 59, 95)",
+      height: '4rem',
+      
   },
   menuButton: {
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
+    marginRight: theme.spacing(1),
+    [theme.breakpoints.up('sm')]: {
+      color: 'white'
     },
   },
   // necessary for content to be below app bar
@@ -53,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+    backgroundColor: '#efeff6'
   },
 }));
 
@@ -173,7 +174,7 @@ function Layout(props) {
           </Drawer>
         </Hidden>
       </nav>
-      <main className={classes.content}>
+      <main id ="main" className={classes.content}>
         {children}
       </main>
     </div>

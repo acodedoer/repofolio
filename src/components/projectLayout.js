@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1),
   },
   title: {
     flexGrow: 1,
@@ -70,7 +70,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 bar: {
-    backgroundColor: "#464655"
+  zIndex: '999999999',
+  backgroundColor: "rgb(55, 59, 95)",
+  height: '4rem',
+  boxSizing: 'border-box'
 }
 }));
 

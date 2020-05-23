@@ -2,9 +2,11 @@
 
 body{
   padding:0px;
+  height: 100vh;
   margin: 0px;
   font-size:16px;
   font-family: 'Roboto', sans-serif;
+  background-color: #efeff6 !important
 }
 #container{
   display: flex;
@@ -107,7 +109,7 @@ p, li, ul{
 
 @media only screen and (max-width: 1200px) {
   #posts {
-    padding-left: 0.5rem;
+    padding-left: 0.rem;
     padding-right: 0.5rem;
   }
 
@@ -118,6 +120,13 @@ p, li, ul{
 
 
 @media only screen and (max-width: 600px) {
+  body{
+    font-size: 16px;
+  }
+  #posts {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+  }
   #postInner {
     flex-direction: column;
   }
@@ -129,6 +138,9 @@ p, li, ul{
     width:100%
   }
 
+  #main{
+    padding:5px
+  }
   #projectDetails{
     width:100%
   }
