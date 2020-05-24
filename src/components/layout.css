@@ -112,6 +112,9 @@ p, li, ul{
     padding-left: 0.rem;
     padding-right: 0.5rem;
   }
+  #pageheader{
+    font-size: 2rem;
+  }
 
   #post{
     width: 100%
@@ -130,6 +133,12 @@ p, li, ul{
   #postInner {
     flex-direction: column;
   }
+
+  #pageheader, h2{
+    font-size: 1.5rem;
+  }
+
+
 
   #postInner2, #postInner1{
     border: none;

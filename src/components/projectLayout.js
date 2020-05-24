@@ -94,7 +94,7 @@ export default function ProjectLayput({siteTitle, children}) {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h4" noWrap>
-            <a style={{textDecoration:"none", color:'white'}} href="/">repofolio</a>
+            <a id ="pagerheader" style={{textDecoration:"none", color:'white'}} href="/">repofolio</a>
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
