@@ -32,4 +32,4 @@ Cakes come in different shapes and sizes, but being delicious is something they 
 * Instructions need to be followed in order (use ordered list).
 
 ## Examples
-* [Cake recipe web page](https://baffasz.github.io/cake-recipe-/) and [Cake recipe repository](https://github.com/baffasz/cake-recipe-.git)
+* [Cake recipe webpage](https://baffasz.github.io/cake-recipe-/) and [code repository](https://github.com/baffasz/cake-recipe-.git)
