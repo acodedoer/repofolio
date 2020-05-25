@@ -8,7 +8,7 @@ sublevels: "Level-1"
 description: "In this project you'll be practising basic HTML skills by creating a page for a cake recipe (you get to choose the cake)."
 ---
 # Cake Recipe
-Cakes come in different shapes and sizes, but being delicious is something they all have in common. In this project you'll be practising basic HTML skills by creating a page for a cake recipe (you get to choose the cake). You can share an old familiy recipe or a brand new one you just created. What is important is that you use HTML to create web page that displays presents the recipe for readers.
+Cakes come in different shapes and sizes, but being delicious is something they all have in common. In this project you'll be practising basic HTML skills by creating a page for a cake recipe (you get to choose the cake). You can share an old familiy recipe or a brand new one you just created. What is important is that you use HTML to create a web page that displays the recipe for readers.
 ## User Stroies
 * User can view the name of the cake.
 * User can view a brief description (and possibly the history and origins) of the cake.
@@ -28,5 +28,5 @@ Cakes come in different shapes and sizes, but being delicious is something they 
 * Use only HTML (no CSS styling is needed).
 
 ## Hints
-* Ingredients have no predeined order (use unordered list).
+* Ingredients have no predefined order (use unordered list).
 * Instructions need to be followed in order (use ordered list).
