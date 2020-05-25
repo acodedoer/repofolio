@@ -18,7 +18,7 @@ Cakes come in different shapes and sizes, but being delicious is something they 
 * User can view the instructions for making the cake.
 * User can view a picture of a cake.
 
-## Extra
+## Extras
 * User can view the nutritional value of the cake (presented as a table).
 
 ## Userful Links
@@ -30,3 +30,6 @@ Cakes come in different shapes and sizes, but being delicious is something they 
 ## Hints
 * Ingredients have no predefined order (use unordered list).
 * Instructions need to be followed in order (use ordered list).
+cake
+## Examples
+* [Cake recipe web page](https://baffasz.github.io/cake-recipe-/) and [Cake recipe repository](https://github.com/baffasz/cake-recipe-.git)
