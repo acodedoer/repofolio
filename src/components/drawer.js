@@ -43,7 +43,7 @@ function Menu(props) {
         <Divider />
           <List>
             {levels.map((text, index) => (
-              <a href = {`/${text.toLowerCase()}`} style={{textDecoration:"none", color:'black'}}>
+              <a  key={index} href = {`/${text.toLowerCase()}`} style={{textDecoration:"none", color:'black'}}>
               <ListItem button key={text}>
               <ListItemIcon>{icons[text.toLowerCase()]}</ListItemIcon>
                 <ListItemText primary={text} />
@@ -54,7 +54,7 @@ function Menu(props) {
           <Divider />
           <List>
             {tags.map((text, index) => (
-               <a href = {`/${text.toLowerCase()}`} style={{textDecoration:"none", color:'black'}}>
+               <a key={index} href = {`/${text.toLowerCase()}`} style={{textDecoration:"none", color:'black'}}>
               <ListItem button key={text}>
                 <ListItemIcon>{icons[text.toLowerCase()]}</ListItemIcon>
                 <ListItemText primary={text} />
@@ -65,7 +65,7 @@ function Menu(props) {
           <Divider />
           <List>
             {types.map((text, index) => (
-               <a href = {`/${text.toLowerCase()}`} style={{textDecoration:"none", color:'black'}}>
+               <a key={index} href = {`/${text.toLowerCase()}`} style={{textDecoration:"none", color:'black'}}>
               <ListItem button key={text}>
                 <ListItemIcon>{icons[text.toLowerCase()]}</ListItemIcon>
                 <ListItemText primary={text} />

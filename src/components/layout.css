@@ -30,13 +30,10 @@ h3{
 }
 
 #posts{
-  box-sizing: border-box;
-  padding-top: 4em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width:100%;
 }
 
 #post{
@@ -110,6 +107,11 @@ h3{
 
 p, li, ul{
   font-family: 'Open Sans', sans-serif;
+}
+
+#notFixedDrawer{
+  position:absolute;
+  left: 0px;
 }
 
 @media only screen and (max-width: 1200px) {

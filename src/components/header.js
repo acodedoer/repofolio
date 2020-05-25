@@ -11,10 +11,17 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import "../components/layout.css";
 
+const drawerWidth = 240;
+
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
-    backgroundColor: '#efeff6',
+    display: 'flex'
+  },
+  drawer: {
+    [theme.breakpoints.up('sm')]: {
+      width: drawerWidth,
+      flexShrink: 0,
+    },
   },
   appBar: {
       zIndex: '999999999',
@@ -27,10 +34,10 @@ const useStyles = makeStyles((theme) => ({
       display: 'none'
     },
   },
+  toolbar: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
-    backgroundColor: '#efeff6'
+    padding: theme.spacing(3)
   },
 }));
 
@@ -47,11 +54,12 @@ function Header(props) {
   };
 
   const drawer = <Menu />
-  let permanentDrawer = null
-  if(props.drawerStyle == 'fixed'){
-    permanentDrawer = <Menu />
+  let fixedDrawer = <Menu />
+  if(props.drawerStyle == 'notFixed'){
+    fixedDrawer = null;
   }
-
+  
+  const drawerClass = {'fixed': 'fixedDrawer', 'notFixed': 'notFixedDrawer'}
   const container = window !== undefined ? () => window().document.body : undefined;
   return (
     <div className={classes.root}>
@@ -72,7 +80,7 @@ function Header(props) {
           </Typography>
         </Toolbar>
       </AppBar>
-      <nav className={classes.drawer} aria-label="mailbox folders">
+      <nav className={classes.drawer} id = {drawerClass[props.drawerStyle]} aria-label="mailbox folders">
         <Hidden smUp implementation="css">
           <Drawer
             container={container}
@@ -98,11 +106,12 @@ function Header(props) {
             variant="permanent"
             open
           >
-            {permanentDrawer}
+            {fixedDrawer}
           </Drawer>
         </Hidden>
       </nav>
-      <main id ="main" className={classes.content}>
+      <main id='main' className={classes.content}>
+        <div className={classes.toolbar} />
         {children}
       </main>
     </div>

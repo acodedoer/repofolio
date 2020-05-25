@@ -1,11 +1,9 @@
 import React from 'react';
 import Layout from '../components/layout'
-import SEO from '../components/seo'
 
-export default function ProjectLayput({siteTitle, children}) {
+export default function ProjectLayput({children}) {
   return (
-    <Layout drawerStyle={'unfixed'}>
-        <SEO title={siteTitle} />
+    <Layout drawerStyle={'notFixed'}>
       {children}
     </Layout>
   );
