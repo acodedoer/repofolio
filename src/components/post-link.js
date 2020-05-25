@@ -37,7 +37,7 @@ export default function PostLink({post}) {
 
   return (
     <Card id="post" className={classes.root}>
-      <CardContent>
+      <CardContent style={{padding:'0.5rem'}}>
         <Typography variant="h5" component="h2">
           {post.frontmatter.title}
         </Typography>

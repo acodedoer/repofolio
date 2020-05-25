@@ -9,7 +9,7 @@ const IndexPage = ({data}) => {
     .filter(edge => !!edge.node.frontmatter.title) // You can filter your posts based on some criteria
     .map((edge, key) => <PostLink key={key} post={edge.node} />)
   return(
-    <Layout tags={data.filters.tags} levels={data.filters.levels} types={data.filters.types}>
+    <Layout drawerStyle={'fixed'}>
         <SEO title="Home" />
       <div id="posts">{Posts}</div>
     </Layout>)

@@ -50,12 +50,17 @@ h3{
 }
 
 #projectDetails{
-  width: 80%
+  width: 80%;
+  margin: 0 auto;
 }
 
 #postInner{
   display: flex;
   flex-direction: row;
+}
+
+#pageheader{
+  font-size: 2rem;
 }
 
 #postInner1{

@@ -9,10 +9,9 @@ export default function Template(
   data, // this prop will be injected by the GraphQL query below.
 ) {
     const projects = data.pageContext.projects // data.markdownRemark holds your post data
-    const filters = data.pageContext.filters
 
   return (
-      <Layout tags={filters.tags} levels={filters.levels} types={filters.types}>
+      <Layout drawerStyle={'fixed'}>
         <SEO title={`${data.pageContext.element} Projects`} />
         <div id="posts">
             {projects.map(({node}, key) =>
